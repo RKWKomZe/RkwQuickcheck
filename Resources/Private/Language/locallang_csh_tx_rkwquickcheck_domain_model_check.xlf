@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2017-09-18T14:34:09Z" product-name="rkw_quickcheck">
+		<header/>
+		<body>
+			<trans-unit id="tx_rkw_quickcheck_domain_model_check">
+				<source>check</source>
+			</trans-unit>
+			<trans-unit id="tx_rkw_quickcheck_domain_model_check.description">
+				<source>An Extension to manage answers of dichtiomous questions and returns a answer-based calculated result</source>
+			</trans-unit>
+			<trans-unit id="name.description">
+				<source>name</source>
+			</trans-unit>
+			<trans-unit id="description.description">
+				<source>description</source>
+			</trans-unit>
+			<trans-unit id="check_pid.description">
+				<source>checkPid</source>
+			</trans-unit>
+			<trans-unit id="result_a.description">
+				<source>resultA</source>
+			</trans-unit>
+			<trans-unit id="result_b.description">
+				<source>resultB</source>
+			</trans-unit>
+			<trans-unit id="result_c.description">
+				<source>resultC</source>
+			</trans-unit>
+			<trans-unit id="topic.description">
+				<source>topic</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

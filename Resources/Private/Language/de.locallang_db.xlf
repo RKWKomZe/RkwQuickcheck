@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2017-09-18T14:34:09Z" product-name="rkw_quickcheck">
+		<header/>
+		<body>
+			<trans-unit id="tx_rkwquickcheck_domain_model_check">
+				<source>RKW Quickcheck: Check</source>
+                <target>RKW Quickcheck: Check</target>
+			</trans-unit>
+			<trans-unit id="tx_rkwquickcheck_domain_model_check.description">
+				<source>An Extension to manage answers of dichtiomous questions and returns a answer-based calculated result</source>
+				<target>Eine Extension um dichotome Fragen zu managen und ein automatisiertes Ergebnis zu kalkulieren</target>
+			</trans-unit>
+			<trans-unit id="tx_rkwquickcheck_domain_model_check.name">
+				<source>Name</source>
+				<target>Name</target>
+			</trans-unit>
+			<trans-unit id="tx_rkwquickcheck_domain_model_check.description">
+				<source>Description</source>
+				<target>Beschreibung</target>
+			</trans-unit>
+			<trans-unit id="tx_rkwquickcheck_domain_model_check.result_a">
+				<source>Result A</source>
+				<target>Ergebnis A</target>
+			</trans-unit>
+			<trans-unit id="tx_rkwquickcheck_domain_model_check.result_b">
+				<source>Result B</source>
+				<target>Ergebnis B</target>
+			</trans-unit>
+			<trans-unit id="tx_rkwquickcheck_domain_model_check.result_c">
+				<source>Result C</source>
+				<target>Ergebnis C</target>
+			</trans-unit>
+			<trans-unit id="tx_rkwquickcheck_domain_model_check.topic">
+				<source>Topic</source>
+				<target>Thema</target>
+			</trans-unit>
+
+
+			<trans-unit id="tx_rkwquickcheck_domain_model_topic">
+				<source>RKW QuickCheck: Topic</source>
+				<target>RKW QuickCheck: Thema</target>
+			</trans-unit>
+			<trans-unit id="tx_rkwquickcheck_domain_model_topic.name">
+				<source>Name</source>
+				<target>Name</target>
+			</trans-unit>
+			<trans-unit id="tx_rkwquickcheck_domain_model_topic.description">
+				<source>Description</source>
+				<target>Beschreibung</target>
+			</trans-unit>
+			<trans-unit id="tx_rkwquickcheck_domain_model_topic.question">
+				<source>Question</source>
+				<target>Frage</target>
+			</trans-unit>
+
+
+			<trans-unit id="tx_rkwquickcheck_domain_model_question">
+				<source>RKW QuickCheck: Question</source>
+				<target>RKW QuickCheck: Frage</target>
+			</trans-unit>
+			<trans-unit id="tx_rkwquickcheck_domain_model_question.question">
+				<source>Question</source>
+				<target>Frage</target>
+			</trans-unit>
+			<trans-unit id="tx_rkwquickcheck_domain_model_question.description">
+				<source>Description</source>
+				<target>Beschreibung</target>
+			</trans-unit>
+			<trans-unit id="tx_rkwquickcheck_domain_model_question.topic">
+				<source>Topic</source>
+				<target>Thema</target>
+			</trans-unit>
+
+
+
+			<!-- flexform -->
+			<trans-unit id="flexform.quickcheck.sheetTitle">
+				<source>The check</source>
+				<target>Online-Check</target>
+			</trans-unit>
+			<trans-unit id="flexform.select.check">
+				<source>Select a check</source>
+				<target>Einen Online-Check auswählen</target>
+			</trans-unit>
+			<trans-unit id="flexform.terms.pid">
+				<source>Select a page for terms</source>
+				<target>Nutzungsbedingungen (falls nichts ausgewählt, wird der TypoScript Default verwendet)</target>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

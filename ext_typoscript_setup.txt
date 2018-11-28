@@ -1,0 +1,14 @@
+
+config.tx_extbase {
+  persistence {
+    classes {
+
+      RKW\RkwQuickcheck\Domain\Model\Topic {
+        mapping {
+          
+        }
+      }
+
+    }
+  }
+}

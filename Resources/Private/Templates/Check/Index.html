@@ -1,0 +1,47 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+This Template is responsible for displaying a single view for a domain object
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+Resources:
+Private:
+Templates:
+Show.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+
+    <f:flashMessages renderMode="div" />
+
+	<h2 class="h1">{check.name}</h2>
+    <f:format.html>{check.description}</f:format.html>
+
+    <p>&nbsp;</p>
+
+    <f:form action="show" id="checkExec" name="checkExec" object="{checkExec}" class="form-fields">
+        <div class="v320-1-of-2">
+            <div class="v320-1">
+                <span class="checkbox">
+                    <label>
+                        <f:form.checkbox id="terms" property="terms" value="1" />
+                        <span class="text-smaller">
+                            <f:translate key="templates_check_index.terms1" />
+                            <f:link.page pageUid="{f:if(condition: '{settings.termsPidFlexform}', then: '{settings.termsPidFlexform}', else: '{settings.termsPid}')}" target="_blank">
+                                <f:translate key="templates_check_index.terms2" />
+                            </f:link.page>
+                        </span>
+                    </label>
+                </span>
+            </div>
+            <br>
+            <div class="v320-1">
+                <f:form.submit class="button" value="<f:translate key='templates_check_index.submit' />" />
+            </div>
+        </div>
+    </f:form>
+
+</f:section>
+</html>

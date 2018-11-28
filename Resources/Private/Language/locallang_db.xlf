@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2017-09-18T14:34:09Z" product-name="rkw_quickcheck">
+		<header/>
+		<body>
+			<trans-unit id="tx_rkwquickcheck_domain_model_check">
+				<source>RKW QuickCheck: Check</source>
+			</trans-unit>
+			<trans-unit id="tx_rkwquickcheck_domain_model_check.description">
+				<source>An Extension to manage answers of dichtiomous questions and returns a answer-based calculated result</source>
+			</trans-unit>
+			<trans-unit id="tx_rkwquickcheck_domain_model_check.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_rkwquickcheck_domain_model_check.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_rkwquickcheck_domain_model_check.result_a">
+				<source>Result A</source>
+			</trans-unit>
+			<trans-unit id="tx_rkwquickcheck_domain_model_check.result_b">
+				<source>Result B</source>
+			</trans-unit>
+			<trans-unit id="tx_rkwquickcheck_domain_model_check.result_c">
+				<source>Result C</source>
+			</trans-unit>
+			<trans-unit id="tx_rkwquickcheck_domain_model_check.topic">
+				<source>Topic</source>
+			</trans-unit>
+
+
+			<trans-unit id="tx_rkwquickcheck_domain_model_topic">
+				<source>RKW QuickCheck: Topic</source>
+			</trans-unit>
+			<trans-unit id="tx_rkwquickcheck_domain_model_topic.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_rkwquickcheck_domain_model_topic.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_rkwquickcheck_domain_model_topic.question">
+				<source>Question</source>
+			</trans-unit>
+
+
+			<trans-unit id="tx_rkwquickcheck_domain_model_question">
+				<source>RKW QuickCheck: Question</source>
+			</trans-unit>
+			<trans-unit id="tx_rkwquickcheck_domain_model_question.question">
+				<source>Question</source>
+			</trans-unit>
+			<trans-unit id="tx_rkwquickcheck_domain_model_question.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_rkwquickcheck_domain_model_question.topic">
+				<source>Topic</source>
+			</trans-unit>
+
+
+
+			<!-- flexform -->
+			<trans-unit id="flexform.quickcheck.sheetTitle">
+				<source>The check</source>
+			</trans-unit>
+			<trans-unit id="flexform.select.check">
+				<source>Select a check</source>
+			</trans-unit>
+			<trans-unit id="flexform.terms.pid">
+				<source>Select a page for terms</source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>
