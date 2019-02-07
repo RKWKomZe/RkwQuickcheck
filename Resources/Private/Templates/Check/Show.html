@@ -3,7 +3,18 @@
 
 	<f:section name="main">
 
-        <f:flashMessages renderMode="div" />
+        <f:flashMessages as="flashMessages">
+            <div class="typo3-messages">
+                <f:for each="{flashMessages}" as="flashMessage">
+                    <div class="alert {flashMessage.class}">
+                        <f:if condition="{flashMessage.title}">
+                            <h4>{flashMessage.title}</h4>
+                        </f:if>
+                        <div class="alert-message">{flashMessage.message}</div>
+                    </div>
+                </f:for>
+            </div>
+        </f:flashMessages>
 
         <!-- questions -->
         <f:form action="result" name="checkExec" object="{checkExec}">
