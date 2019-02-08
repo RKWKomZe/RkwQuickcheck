@@ -4,16 +4,19 @@
 	<f:section name="main">
 
         <f:flashMessages as="flashMessages">
-            <div class="typo3-messages">
-                <f:for each="{flashMessages}" as="flashMessage">
-                    <div class="alert {flashMessage.class}">
-                        <f:if condition="{flashMessage.title}">
-                            <h4>{flashMessage.title}</h4>
-                        </f:if>
-                        <div class="alert-message">{flashMessage.message}</div>
+            <f:for each="{flashMessages}" as="flashMessage">
+                <div class="typo3-messages">
+                    <div class="alert alert-{flashMessage.class}">
+                        <div class="media">
+                            <div class="media-body">
+                                <div class="alert-message">
+                                    {flashMessage.message}
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </f:for>
-            </div>
+                </div>
+            </f:for>
         </f:flashMessages>
 
         <!-- questions -->
