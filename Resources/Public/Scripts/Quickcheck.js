@@ -83,4 +83,13 @@ jQuery(document).ready(function() {
 
 	});
 
+    if (jQuery("#tx-rkw-quickcheck .value-box").length) {
+        jQuery('html,body').animate(
+            {
+                scrollTop: jQuery('#tx-rkw-quickcheck').offset().top
+            },
+            'slow'
+        );
+    }
+
 });
