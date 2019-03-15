@@ -14,6 +14,7 @@ namespace RKW\RkwQuickcheck\Controller;
  *
  * The TYPO3 project - inspiring people to share!
  */
+use Konafets\Typo3Debugbar\Overrides\DebuggerUtility;
 
 /**
  * CheckController
@@ -54,18 +55,24 @@ class CheckController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      */
     public function showAction($checkExec = null)
     {
-        // check if terms are selected
+        // check if terms are selected (only if PID to terms are set)
         if (
-            !$checkExec
-            || !isset($checkExec['terms'])
-            || !intval($checkExec['terms'])
+            !empty($this->settings['termsPid'])
+            || !empty($this->settings['termsPidFlexform'])
         ) {
-            // please accept the terms!
-            $this->addFlashMessage(
-                \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('checkController.error.terms', 'rkw_quickcheck')
-            );
-            $this->redirect('index');
+            if (
+                !$checkExec
+                || !isset($checkExec['terms'])
+                || !intval($checkExec['terms'])
+            ) {
+                // please accept the terms!
+                $this->addFlashMessage(
+                    \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('checkController.error.terms', 'rkw_quickcheck')
+                );
+                $this->redirect('index');
+            }
         }
+
         $this->view->assign('check', $this->checkRepository->findByIdentifier(intval($this->settings['check'])));
         $this->view->assign('checkExec', $checkExec);
     }
