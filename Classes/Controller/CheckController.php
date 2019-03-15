@@ -58,7 +58,7 @@ class CheckController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         // check if terms are selected (only if PID to terms are set)
         if (
             !empty($this->settings['termsPid'])
-            || !empty($this->settings['termsPidFlexform'])
+            && !empty($this->settings['termsPidFlexform'])
         ) {
             if (
                 !$checkExec
