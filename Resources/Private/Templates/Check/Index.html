@@ -37,19 +37,16 @@ Otherwise your changes will be overwritten the next time you save the extension 
 
     <f:form action="show" id="checkExec" name="checkExec" object="{checkExec}" class="form-fields">
         <div class="v320-1-of-2">
-            <div class="v320-1">
-                <span class="checkbox">
-                    <label>
-                        <f:form.checkbox id="terms" property="terms" value="1" />
-                        <span class="text-smaller">
-                            <f:translate key="templates_check_index.terms1" />
-                            <f:link.page pageUid="{f:if(condition: '{settings.termsPidFlexform}', then: '{settings.termsPidFlexform}', else: '{settings.termsPid}')}" target="_blank">
-                                <f:translate key="templates_check_index.terms2" />
-                            </f:link.page>
-                        </span>
-                    </label>
-                </span>
-            </div>
+            <f:if condition="{settings.termsPidFlexform}">
+                <f:then>
+                    <f:render section="checkbox" />
+                </f:then>
+                <f:else>
+                    <f:if condition="{settings.termsPid}">
+                        <f:render section="checkbox" />
+                    </f:if>
+                </f:else>
+            </f:if>
             <br>
             <div class="v320-1">
                 <f:form.submit class="button" value="<f:translate key='templates_check_index.submit' />" />
@@ -57,5 +54,22 @@ Otherwise your changes will be overwritten the next time you save the extension 
         </div>
     </f:form>
 
+</f:section>
+
+<f:section name="checkbox">
+    <div class="v320-1">
+        <span class="quickcheck-checkbox">
+            <label class="container">
+                <span class="text-smaller">
+                    <f:translate key="templates_check_index.terms1" />
+                    <f:link.page pageUid="{f:if(condition: '{settings.termsPidFlexform}', then: '{settings.termsPidFlexform}', else: '{settings.termsPid}')}" target="_blank">
+                        <f:translate key="templates_check_index.terms2" />
+                    </f:link.page>
+                </span>
+                <f:form.checkbox id="terms" property="terms" value="1" />
+                <span class="checkmark"></span>
+            </label>
+        </span>
+    </div>
 </f:section>
 </html>

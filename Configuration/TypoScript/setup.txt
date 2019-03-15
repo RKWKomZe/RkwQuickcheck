@@ -13,6 +13,7 @@ plugin.tx_rkwquickcheck {
 	}
 	settings {
 		termsPid = {$plugin.tx_rkwquickcheck.settings.termsPid}
+        scrollToResultJs = {$plugin.tx_rkwquickcheck.settings.scrollToResultJs}
 	}
 	features {
 		#skipDefaultArguments = 1

@@ -83,4 +83,17 @@ jQuery(document).ready(function() {
 
 	});
 
+    // scroll to result. Optional: Is defined via TS and is set as value in html
+    if (
+        jQuery("#tx-rkw-quickcheck .value-box").length
+        && jQuery("#quickcheckScrollToResultJs").val() == "1"
+    ) {
+        jQuery('html,body').animate(
+            {
+                scrollTop: jQuery('#tx-rkw-quickcheck').offset().top
+            },
+            'slow'
+        );
+    }
+
 });
