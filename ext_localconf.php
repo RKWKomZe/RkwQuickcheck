@@ -5,6 +5,9 @@ call_user_func(
 	function($extKey)
 	{
 
+        //=================================================================
+        // Configure Plugin
+        //=================================================================
 		\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
 			'RKW.RkwQuickcheck',
 			'Check',
@@ -17,27 +20,6 @@ call_user_func(
 			]
 		);
 
-	    // wizards
-        /*
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
-            'mod {
-                wizards.newContentElement.wizardItems.plugins {
-                    elements {
-                        check {
-                            icon = ' . \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($extKey) . 'Resources/Public/Icons/user_plugin_check.svg
-                            title = LLL:EXT:rkw_quickcheck/Resources/Private/Language/locallang_db.xlf:tx_rkw_quickcheck_domain_model_check
-                            description = LLL:EXT:rkw_quickcheck/Resources/Private/Language/locallang_db.xlf:tx_rkw_quickcheck_domain_model_check.description
-                            tt_content_defValues {
-                                CType = list
-                                list_type = rkwquickcheck_check
-                            }
-                        }
-                    }
-                    show = *
-                }
-            }'
-        );
-        */
 	},
 	$_EXTKEY
 );
