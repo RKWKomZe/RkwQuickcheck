@@ -1,20 +1,6 @@
-plugin.tx_rkwquickcheck {
-	view {
-		# cat=plugin.tx_rkwquickcheck/file; type=string; label=Path to template root (FE)
-		templateRootPath = EXT:rkw_quickcheck/Resources/Private/Templates/
-		# cat=plugin.tx_rkwquickcheck/file; type=string; label=Path to template partials (FE)
-		partialRootPath = EXT:rkw_quickcheck/Resources/Private/Partials/
-		# cat=plugin.tx_rkwquickcheck/file; type=string; label=Path to template layouts (FE)
-		layoutRootPath = EXT:rkw_quickcheck/Resources/Private/Layouts/
-	}
-	persistence {
-		# cat=plugin.tx_rkwquickcheck//a; type=string; label=Default storage PID
-		storagePid =
-	}
-	settings {
-		# cat=plugin.tx_rkwquickcheck//a; type=integer; label=Default terms PID
-		termsPid =
-        # cat=plugin.tx_rkwquickcheck//a; type=integer; label=On show result, scroll to text
-        scrollToResultJs = 0
-	}
-}
+
+# !!! DEPRECATED – only for compatibility reasons !!!
+# We're moving from ".ts" and ".txt" to ".typoscript".
+# @see: https://docs.typo3.org/c/typo3/cms-core/master/en-us/Changelog/8.7.x/Feature-78161-IntroduceTypoScriptFileExtension.html
+
+<INCLUDE_TYPOSCRIPT: source="FILE:./constants.typoscript">
