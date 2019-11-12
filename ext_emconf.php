@@ -21,11 +21,9 @@ $EM_CONF[$_EXTKEY] = [
     'uploadfolder' => '0',
     'createDirs' => '',
     'clearCacheOnLoad' => 0,
-    'version' => '8.7.2',
+    'version' => '8.7.3',
     'constraints' => [
         'depends' => [
-            'extbase' => '7.6.0-8.7.99',
-            'fluid' => '7.6.0-8.7.99',
             'typo3' => '7.6.0-8.7.99',
         ],
         'conflicts' => [],
