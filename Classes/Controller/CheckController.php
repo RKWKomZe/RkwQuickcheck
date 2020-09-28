@@ -58,7 +58,7 @@ class CheckController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         // check if terms are selected (only if PID to terms are set)
         if (
             !empty($this->settings['termsPid'])
-            && !empty($this->settings['termsPidFlexform'])
+            || !empty($this->settings['termsPidFlexform'])
         ) {
             if (
                 !$checkExec
@@ -67,7 +67,12 @@ class CheckController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
             ) {
                 // please accept the terms!
                 $this->addFlashMessage(
-                    \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('checkController.error.terms', 'rkw_quickcheck')
+                    \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate(
+                        'checkController.error.terms',
+                        'rkw_quickcheck'
+                    ),
+                    '',
+                    \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR
                 );
                 $this->redirect('index');
             }

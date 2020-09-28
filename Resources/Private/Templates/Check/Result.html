@@ -1,35 +1,40 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-<f:layout name="Default" />
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true">
 
-This Template is responsible for displaying a single view for a domain object
+    <f:layout name="Default" />
 
-If you modify this template, do not forget to change the overwrite settings
-in /Configuration/ExtensionBuilder/settings.yaml:
-Resources:
-Private:
-Templates:
-Show.html: keep
+    This Template is responsible for displaying a single view for a domain object
 
-Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+    If you modify this template, do not forget to change the overwrite settings
+    in /Configuration/ExtensionBuilder/settings.yaml:
+    Resources:
+    Private:
+    Templates:
+    Show.html: keep
 
-<f:section name="main">
+    Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
-    <h2 class="h1">
-        <f:translate key="templates_check_result.topic_result" />
-    </h2>
+    <f:section name="main">
 
-    <input type="hidden" id="quickcheckScrollToResultJs" value="{settings.scrollToResultJs}" >
-    <div class="careercheck__content">
-        <div class="value-box">
-            <h2>
-                <f:translate key="templates_check_result.overall_result" />
+        <div class="flex">
+            <h2 class="h2">
+                <f:translate key="templates_check_result.topic_result" />
             </h2>
-            <span class="value {valueColor}">{outcome}%</span>
         </div>
-        <div class="value-text">
-            <f:format.html>{result}</f:format.html>
-        </div>
-    </div>
 
-</f:section>
+
+        <input type="hidden" id="quickcheckScrollToResultJs" value="{settings.scrollToResultJs}" >
+        <div class="career-description flex space-between">
+            <div class="info-flag info-flag--results info-flag--left flex-basis-4">
+                <h3 class="info-flag__headline">
+                    <f:translate key="templates_check_result.overall_result" />
+                </h3>
+                <span class="info-flag__text info-flag__text--good {valueColor}">{outcome}%</span>
+            </div>
+            <div class="description-text flex-basis-8">
+                <f:format.html>{result}</f:format.html>
+            </div>
+        </div>
+
+    </f:section>
 </html>

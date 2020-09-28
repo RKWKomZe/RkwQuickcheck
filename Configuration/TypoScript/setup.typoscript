@@ -12,6 +12,7 @@ plugin.tx_rkwquickcheck {
 		#recursive = 1
 	}
 	settings {
+        version = {$plugin.tx_rkwquickcheck.settings.version}
 		termsPid = {$plugin.tx_rkwquickcheck.settings.termsPid}
         scrollToResultJs = {$plugin.tx_rkwquickcheck.settings.scrollToResultJs}
 	}
@@ -23,7 +24,12 @@ plugin.tx_rkwquickcheck {
 	}
 }
 
-page.includeJSFooter.txRkwQuickcheck = EXT:rkw_quickcheck/Resources/Public/Scripts/Quickcheck.js
+[globalVar = LIT:2 = {$plugin.tx_rkwquickcheck.settings.version}]
+page.includeJSFooter.txRkwQuickcheck = EXT:rkw_quickcheck/Resources/Public/Scripts/Quickcheck2.js
+[ELSE]
+    page.includeJSFooter.txRkwQuickcheck = EXT:rkw_quickcheck/Resources/Public/Scripts/Quickcheck.js
+[global]
+
 page.includeCSS.txRkwQuickcheck = EXT:rkw_quickcheck/Resources/Public/Styles/Quickcheck.css
 
 plugin.tx_rkwquickcheck._CSS_DEFAULT_STYLE (
@@ -35,3 +41,7 @@ plugin.tx_rkwquickcheck._CSS_DEFAULT_STYLE (
 		color:green;
 	}
 )
+
+
+// @toDO: REMOVE! JUST FOR DEVELOPMENT! Comes later with the standard template
+page.includeCSS.txRkwQuickcheck2 = EXT:rkw_quickcheck/Resources/Public/Styles/careercheck.css
