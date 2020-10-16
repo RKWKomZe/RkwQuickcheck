@@ -69,7 +69,9 @@ CREATE TABLE tx_rkwquickcheck_domain_model_question (
 	uid int(11) NOT NULL auto_increment,
 	pid int(11) DEFAULT '0' NOT NULL,
 
-	question varchar(255) DEFAULT '' NOT NULL,
+	topic int(11) unsigned DEFAULT '0' NOT NULL,
+
+	question text DEFAULT '' NOT NULL,
 	description text NOT NULL,
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,

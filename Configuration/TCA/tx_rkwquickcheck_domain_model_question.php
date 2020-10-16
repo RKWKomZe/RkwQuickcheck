@@ -64,9 +64,10 @@ return [
 			'exclude' => false,
 			'label' => 'LLL:EXT:rkw_quickcheck/Resources/Private/Language/locallang_db.xlf:tx_rkwquickcheck_domain_model_question.question',
 			'config' => [
-				'type' => 'input',
-				'size' => 30,
-				'eval' => 'trim'
+                'type' => 'text',
+                'cols' => 40,
+                'rows' => 8,
+                'eval' => 'trim',
 			],
 		],
 		'description' => [
