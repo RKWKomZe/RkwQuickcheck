@@ -25,13 +25,3 @@ plugin.tx_rkwquickcheck {
 
 page.includeJSFooter.txRkwQuickcheck = EXT:rkw_quickcheck/Resources/Public/Scripts/Quickcheck.js
 page.includeCSS.txRkwQuickcheck = EXT:rkw_quickcheck/Resources/Public/Styles/Quickcheck.css
-
-plugin.tx_rkwquickcheck._CSS_DEFAULT_STYLE (
-	.typo3-messages .message-error {
-		color:red;
-	}
-
-	.typo3-messages .message-ok {
-		color:green;
-	}
-)
