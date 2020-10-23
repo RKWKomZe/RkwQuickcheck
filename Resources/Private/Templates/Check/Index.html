@@ -1,61 +1,48 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-<f:layout name="Default" />
+    <f:layout name="Default" />
 
-This Template is responsible for displaying a single view for a domain object
+    <f:section name="main">
 
-If you modify this template, do not forget to change the overwrite settings
-in /Configuration/ExtensionBuilder/settings.yaml:
-Resources:
-Private:
-Templates:
-Show.html: keep
+        <h2 class="h2">{check.name}</h2>
 
-Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+        <f:render partial="FlashMessages" arguments="{_all}" />
 
-<f:section name="main">
+        <f:format.html>{check.description}</f:format.html>
 
-    <f:render partial="FlashMessages" arguments="{_all}" />
-
-	<h2 class="h1">{check.name}</h2>
-    <f:format.html>{check.description}</f:format.html>
-
-    <p>&nbsp;</p>
-
-    <f:form action="show" id="checkExec" name="checkExec" object="{checkExec}" class="form-fields">
-        <div class="v320-1-of-2">
-            <f:if condition="{settings.termsPidFlexform}">
-                <f:then>
-                    <f:render section="checkbox" />
-                </f:then>
-                <f:else>
-                    <f:if condition="{settings.termsPid}">
-                        <f:render section="checkbox" />
-                    </f:if>
-                </f:else>
-            </f:if>
-            <div class="v320-1">
-                <f:form.submit class="button" value="<f:translate key='templates_check_index.submit' />" />
-            </div>
+        <div class="flex-container">
+            <f:form
+                class="flex flex-basis-8 full-width-medium space-between"
+                id="tx-rkwquickcheck"
+                section="tx-rkwquickcheck"
+                action="show"
+                name="checkExec"
+                object="{checkExec}"
+            >
+                <f:if condition="{settings.termsPidFlexform} || {settings.termsPid}">
+                   <f:render section="checkbox" />
+                </f:if>
+                <div class="form__field flex space-start full-width-narrow">
+                    <f:form.submit
+                        class="btn btn--primary full-width-narrow"
+                        value="<f:translate key='templates_check_index.submit' />"
+                    />
+                </div>
+            </f:form>
         </div>
-    </f:form>
 
-</f:section>
+    </f:section>
 
-<f:section name="checkbox">
-    <div class="v320-1">
-        <span class="quickcheck-checkbox">
-            <label class="container">
-                <span class="text-smaller">
-                    <f:translate key="templates_check_index.terms1" />
-                    <f:link.page pageUid="{f:if(condition: '{settings.termsPidFlexform}', then: '{settings.termsPidFlexform}', else: '{settings.termsPid}')}" target="_blank">
-                        <f:translate key="templates_check_index.terms2" />
-                    </f:link.page>
-                </span>
-                <f:form.checkbox id="terms" property="terms" value="1" />
-                <span class="checkmark"></span>
+    <!-- ====================================================================================================================== -->
+
+    <f:section name="checkbox">
+
+        <div class="form__field break-after">
+            <f:form.checkbox id="terms" property="terms" value="1" class="checkbox" />
+            <label for="terms" class="checkbox-label"><f:translate key="templates_check_index.terms1" />
+                <f:link.page pageUid="{f:if(condition: '{settings.termsPidFlexform}', then: '{settings.termsPidFlexform}', else: '{settings.termsPid}')}" target="_blank">
+                    <f:translate key="templates_check_index.terms2" />
+                </f:link.page>
             </label>
-        </span>
-    </div>
-    <br>
-</f:section>
+        </div>
+    </f:section>
 </html>
