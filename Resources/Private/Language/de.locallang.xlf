@@ -73,7 +73,7 @@
 			<!-- CheckController -->
 			<trans-unit id="checkController.error.terms">
 				<source>Please accept the terms</source>
-				<target>Bitte akzeptieren Sie die Nutzungsbedingungen.</target>
+				<target>Das muss leider sein: Bitte akzeptieren Sie die Nutzungsbedingungen.</target>
 			</trans-unit>
 			<trans-unit id="checkController.error.not_complete">
 				<source>Please answer all questions</source>
@@ -99,6 +99,7 @@
 				<source>Start check</source>
 				<target>Jetzt Check starten</target>
 			</trans-unit>
+
 
 			<trans-unit id="templates_check_show.button_prev">
 				<source>Prev</source>
@@ -126,28 +127,13 @@
             </trans-unit>
             <trans-unit id="templates_check_show.next_hint">
 				<source>Please answer all questions</source>
-				<target>Bitte beantworten zu zuerst alle Fragen mit "Ja" oder "Nein".</target>
+				<target>Bitte beantworten Sie die Frage mit "Ja" oder "Nein".</target>
 			</trans-unit>
 
-			<trans-unit id="templates_check_result.headline_description1">
-				<source>Topic %s completed.</source>
-				<target>Sie haben die Fragen des Themenkomplexes %s vollständig bearbeitet.</target>
-			</trans-unit>
-			<trans-unit id="templates_check_result.headline_description2">
-				<source>Here you can see your result.</source>
-				<target>Hier sehen Sie ihr Zwischenergebnis für diesen Teilbereich.</target>
-			</trans-unit>
+
 			<trans-unit id="templates_check_result.topic_result">
-				<source>Result</source>
+				<source>Your Result</source>
 				<target>Ihr Ergebnis</target>
-			</trans-unit>
-			<trans-unit id="templates_check_result.overall_result">
-				<source>Reached percentage</source>
-				<target>Erreichter Wert</target>
-			</trans-unit>
-			<trans-unit id="templates_check_result.interim_results">
-				<source>Interim result</source>
-				<target>Zwischenergebnisse</target>
 			</trans-unit>
 
 

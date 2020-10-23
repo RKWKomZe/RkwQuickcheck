@@ -1,95 +1,73 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-    data-namespace-typo3-fluid="true">
-
-<f:layout name="Default" />
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+	<f:layout name="Default" />
 
 	<f:section name="main">
 
         <f:render partial="FlashMessages" arguments="{_all}" />
 
         <!-- questions -->
-        <f:form action="result" name="checkExec" object="{checkExec}">
+        <f:form
+            id="tx-rkwquickcheck"
+            section="tx-rkwquickcheck"
+            action="result"
+            name="checkExec"
+            object="{checkExec}"
+        >
             <f:form.hidden id="terms" property="terms" value="{checkExec.terms}" />
 
-            <div class="flex-container">
-                <div class="form flex flex-basis-12 full-width-medium space-between">
+            <f:for each="{check.topic}" as="topic" iteration="topicIter">
+                <f:for each="{topic.question}" as="question" iteration="questionIter">
 
-                    <div class="tx-rkwquickcheck-slide-container">
+                    <div class="webcheck__slide {f:if(condition:'{topicIter.cycle} == 1 && {questionIter.cycle} == 1', then: 'webcheck__slide--is-active')}">
 
-                        <f:for each="{check.topic}" as="topic" iteration="topicIter">
-                            <div class="tx-rkwquickcheck-slide">
+                        <!-- topic number -->
+                        <div class="contentbox__webcheck-header flex webcheck-info">
+                            <h2 class="h2 h2--small flex-basis-9 h2--infoflag-space">{topic.name}</h2>
+                            <div class="info-flag info-flag--right flex-basis-3">
+                                <span class="info-flag__progress"> <f:translate key='templates_check_show.topic' /> {topicIter.cycle}/{topicIter.total}</span>
+                            </div>
+                        </div>
 
-                                <div class="contentbox__career-header flex career-info" id="check-head">
-                                    <h2 class="h2 h2--small flex-basis-12 h2--infoflag-space">{topic.name}</h2>
+                        <!-- topic info -->
+                        <f:format.html parseFuncTSPath="">{topic.description}</f:format.html>
 
-                                    <div class="info-flag info-flag--right flex-basis-3">
-                                        <span class="info-flag__progress">
-                                            <f:translate key='templates_check_show.topic' />
-                                            {topicIter.cycle} / {topicIter.total}
-                                        </span>
-                                    </div>
+                        <!-- questions -->
+                        <div class="contentbox contentbox--gray contentbox--webcheck webcheck">
+
+                            <div class="flex">
+                                <h2 class="h4 align-center">{question.question}</h2>
+                            </div>
+
+                            <div class="system-message webcheck__message" role="alert">
+                                <div class="system-message__item system-message__item--alert-error">
+                                    <f:translate key='templates_check_show.next_hint' />
+                                </div>
+                            </div>
+
+                            <div class="webcheck__questions mt-1">
+
+                                <div class="form__field form__field--webcheck">
+                                    <f:form.radio id="question-{topicIter.cycle}-{questionIter.cycle}-yes" class="radio" property="topic{topicIter.cycle}-quest{questionIter.cycle}" value="1" />
+                                    <label for="question-{topicIter.cycle}-{questionIter.cycle}-yes" class="radio-label radio-label--webcheck answer"><f:translate key='templates_check_show.yes' /></label>
                                 </div>
 
-                                <!-- topic info -->
-                                <f:format.html parseFuncTSPath="">{topic.description}</f:format.html>
-
-                                <!-- questions -->
-                                <f:for each="{topic.question}" as="question" iteration="questionIter">
-                                    <div class="contentbox contentbox--gray careercheck">
-
-                                        <div class="flex">
-                                            <h2><i>{questionIter.cycle}. <f:translate key='templates_check_show.question' /></i>: {question.question}</h2>
-                                        </div>
-
-                                        <div class="careercheck__questions mt-1 tx-rkwquickcheck-radiogroup">
-                                            <div class="radio-class form__field form__field--career answer-good" >
-                                                <f:form.radio
-                                                    id="question-{topicIter.cycle}-{questionIter.cycle}-yes"
-                                                    class="radio"
-                                                    property="topic{topicIter.cycle}-quest{questionIter.cycle}"
-                                                    value="1"
-                                                />
-                                                <label class="radio-label radio-label--career answer" for="question-{topicIter.cycle}-{questionIter.cycle}-yes">
-                                                    <f:translate key='templates_check_show.yes' />
-                                                </label>
-                                            </div>
-                                            <div class="radio-class form__field form__field--career answer--bad" >
-                                                <f:form.radio
-                                                    id="question-{topicIter.cycle}-{questionIter.cycle}-no"
-                                                    class="radio"
-                                                    property="topic{topicIter.cycle}-quest{questionIter.cycle}"
-                                                    value="99"
-                                                />
-                                                <label class="radio-label radio-label--career answer" for="question-{topicIter.cycle}-{questionIter.cycle}-no">
-                                                    <f:translate key='templates_check_show.no' />
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <br>
-
-                                    <!-- pagination -->
-                                    <f:if condition="{questionIter.isLast}">
-                                        <div class="button-footer flex space-between flex-basis-12 mt-2">
-                                            <a class="btn btn--secondary btn--small tx-rkwquickcheck-prev"><f:translate key='templates_check_show.button_prev' /></a>
-                                            <f:comment><!--  class="pagination" produce not wanted margin --></f:comment>
-                                            <div>
-                                                <span><f:translate key='templates_check_show.topic' /> <span class="active">{topicIter.cycle}</span>/<span class="pages">{topicIter.total}</span> </span>
-                                            </div>
-                                            <a class="btn btn--primary btn--small tx-rkwquickcheck-next"><f:translate key='templates_check_show.button_next' /></a>
-                                        </div>
-                                    </f:if>
-
-                                </f:for>
+                                <div class="form__field form__field--webcheck">
+                                    <f:form.radio id="question-{topicIter.cycle}-{questionIter.cycle}-no" class="radio" property="topic{topicIter.cycle}-quest{questionIter.cycle}" value="99" />
+                                    <label for="question-{topicIter.cycle}-{questionIter.cycle}-no" class="radio-label radio-label--webcheck answer"><f:translate key='templates_check_show.no' /></label>
+                                </div>
                             </div>
-                        </f:for>
+                            <div class="button-footer flex space-between flex-basis-12 mt-2">
+                                <div>&nbsp;</div>
+                                <div class="steps">
+                                    <span><f:translate key='templates_check_show.question' /> {questionIter.cycle}/{questionIter.total}</span>
+                                </div>
+                                <button class="btn btn--primary webcheck__slide-button"><f:translate key="templates_check_show.button_next" /></button>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
+                </f:for>
+            </f:for>
         </f:form>
 
-        <!-- hidden hint -->
-        <div class="tx-rkwquickcheck-hint" style="display: none;"><f:translate key='templates_check_show.next_hint' /></div>
 	</f:section>
 </html>

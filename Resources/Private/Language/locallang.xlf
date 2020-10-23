@@ -103,21 +103,13 @@
 				<source>Please answer all questions</source>
 			</trans-unit>
 
-			<trans-unit id="templates_check_result.headline_description1">
-				<source>Topic %s completed.</source>
-			</trans-unit>
-			<trans-unit id="templates_check_result.headline_description2">
-				<source>Here you can see your result.</source>
-			</trans-unit>
+
 			<trans-unit id="templates_check_result.topic_result">
-				<source>Result of all topic.</source>
+				<source>Your Result</source>
 			</trans-unit>
-			<trans-unit id="templates_check_result.overall_result">
-				<source>Overall result</source>
-			</trans-unit>
-			<trans-unit id="templates_check_result.interim_results">
-				<source>Interim result</source>
-			</trans-unit>
+
+
+
 
 		</body>
 	</file>

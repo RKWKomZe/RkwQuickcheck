@@ -1,37 +1,15 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-    data-namespace-typo3-fluid="true">
-
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
     <f:layout name="Default" />
-
-    This Template is responsible for displaying a single view for a domain object
-
-    If you modify this template, do not forget to change the overwrite settings
-    in /Configuration/ExtensionBuilder/settings.yaml:
-    Resources:
-    Private:
-    Templates:
-    Show.html: keep
-
-    Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
     <f:section name="main">
 
-        <div class="flex">
-            <h2 class="h2">
-                <f:translate key="templates_check_result.topic_result" />
-            </h2>
-        </div>
+        <h3 id="tx-rkwquickcheck"><f:translate key="templates_check_result.topic_result" /></h3>
+        <div class="webcheck-description flex space-between">
 
-
-        <input type="hidden" id="quickcheckScrollToResultJs" value="{settings.scrollToResultJs}" >
-        <div class="career-description flex space-between">
-            <div class="info-flag info-flag--results info-flag--left flex-basis-4">
-                <h3 class="info-flag__headline">
-                    <f:translate key="templates_check_result.overall_result" />
-                </h3>
-                <span class="info-flag__text info-flag__text--good {valueColor}">{outcome}%</span>
+            <div class="info-flag info-flag--small-height info-flag--left flex-basis-2">
+                <span class="info-flag__text info-flag__text--normal">{outcome}%</span>
             </div>
-            <div class="description-text flex-basis-8">
+            <div class="description-text flex-basis-10">
                 <f:format.html>{result}</f:format.html>
             </div>
         </div>

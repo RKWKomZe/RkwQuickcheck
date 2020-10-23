@@ -52,6 +52,8 @@ class CheckController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      *
      * @param array $checkExec
      * @return void
+     * @throws \TYPO3\CMS\Extbase\Mvc\Exception\StopActionException;
+     * @throws \TYPO3\CMS\Extbase\Mvc\Exception\UnsupportedRequestTypeException;
      */
     public function showAction($checkExec = null)
     {
@@ -87,6 +89,8 @@ class CheckController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      * action result
      *
      * @param array $checkExec
+     * @throws \TYPO3\CMS\Extbase\Mvc\Exception\StopActionException;
+     * @throws \TYPO3\CMS\Extbase\Mvc\Exception\UnsupportedRequestTypeException;
      * @return void
      */
     public function resultAction($checkExec = null)
