@@ -52,13 +52,15 @@ class CheckController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      *
      * @param array $checkExec
      * @return void
+     * @throws \TYPO3\CMS\Extbase\Mvc\Exception\StopActionException;
+     * @throws \TYPO3\CMS\Extbase\Mvc\Exception\UnsupportedRequestTypeException;
      */
     public function showAction($checkExec = null)
     {
         // check if terms are selected (only if PID to terms are set)
         if (
             !empty($this->settings['termsPid'])
-            && !empty($this->settings['termsPidFlexform'])
+            || !empty($this->settings['termsPidFlexform'])
         ) {
             if (
                 !$checkExec
@@ -67,7 +69,12 @@ class CheckController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
             ) {
                 // please accept the terms!
                 $this->addFlashMessage(
-                    \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('checkController.error.terms', 'rkw_quickcheck')
+                    \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate(
+                        'checkController.error.terms',
+                        'rkw_quickcheck'
+                    ),
+                    '',
+                    \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR
                 );
                 $this->redirect('index');
             }
@@ -82,6 +89,8 @@ class CheckController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      * action result
      *
      * @param array $checkExec
+     * @throws \TYPO3\CMS\Extbase\Mvc\Exception\StopActionException;
+     * @throws \TYPO3\CMS\Extbase\Mvc\Exception\UnsupportedRequestTypeException;
      * @return void
      */
     public function resultAction($checkExec = null)

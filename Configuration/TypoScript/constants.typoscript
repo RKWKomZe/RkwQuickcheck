@@ -12,9 +12,20 @@ plugin.tx_rkwquickcheck {
 		storagePid =
 	}
 	settings {
+
+        # cat=plugin.tx_rkwquickcheck//f; type=integer; label=Version to use
+        version = 2
+
 		# cat=plugin.tx_rkwquickcheck//a; type=integer; label=Default terms PID
 		termsPid =
+
         # cat=plugin.tx_rkwquickcheck//a; type=integer; label=On show result, scroll to text
         scrollToResultJs = 0
+
+        # cat=plugin.tx_rkwsurvey//a; type=boolean; label=Include CSS?
+        includeCss = 0
+
+        # cat=plugin.tx_rkwsurvey//a; type=boolean; label=Include jQuery?
+        includeJQuery = 0
 	}
 }

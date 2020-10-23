@@ -23,5 +23,17 @@ plugin.tx_rkwquickcheck {
 	}
 }
 
-page.includeJSFooter.txRkwQuickcheck = EXT:rkw_quickcheck/Resources/Public/Scripts/Quickcheck.js
-page.includeCSS.txRkwQuickcheck = EXT:rkw_quickcheck/Resources/Public/Styles/Quickcheck.css
+[globalVar = LIT:1 = {$plugin.tx_rkwquickcheck.settings.includeCss}]
+    page.includeJSFooter.txRkwQuickcheck = EXT:rkw_quickcheck/Resources/Public/Css/webcheck-2.0.css
+[global]
+
+[globalVar = LIT:1 = {$plugin.tx_rkwquickcheck.settings.version}]
+    page.includeJSFooter.txRkwQuickcheck = EXT:rkw_quickcheck/Resources/Public/Scripts/quickcheck-1.0.js
+[global]
+[globalVar = LIT:2 = {$plugin.tx_rkwquickcheck.settings.version}]
+    page.includeJSFooter.txRkwQuickcheck = EXT:rkw_quickcheck/Resources/Public/Scripts/quickcheck-2.0.js
+[global]
+
+[globalVar = LIT:1 = {$plugin.tx_rkwquickcheck.settings.includeJQuery}]
+	page.includeJSFooterlibs.txRkwQuickcheck  = EXT:rkw_quickcheck/Resources/Public/Scripts/jquery-3.4.1.min.js
+[global]
