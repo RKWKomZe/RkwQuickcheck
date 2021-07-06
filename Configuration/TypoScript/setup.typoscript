@@ -24,7 +24,7 @@ plugin.tx_rkwquickcheck {
 }
 
 [globalVar = LIT:1 = {$plugin.tx_rkwquickcheck.settings.includeCss}]
-    page.includeJSFooter.txRkwQuickcheck = EXT:rkw_quickcheck/Resources/Public/Css/webcheck-2.0.css
+    page.includeCSS.txRkwQuickcheck = EXT:rkw_quickcheck/Resources/Public/Styles/webcheck-2.0.css
 [global]
 
 [globalVar = LIT:1 = {$plugin.tx_rkwquickcheck.settings.version}]
