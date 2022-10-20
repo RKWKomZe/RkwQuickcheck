@@ -65,7 +65,7 @@ class Check extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * topic
      *
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RKW\RkwQuickcheck\Domain\Model\Topic>
-     * @cascade remove
+     * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
      */
     protected $topic = null;
 

@@ -31,7 +31,7 @@ class CheckController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      * checkRepository
      *
      * @var \RKW\RkwQuickcheck\Domain\Repository\CheckRepository
-     * @inject
+     * @TYPO3\CMS\Extbase\Annotation\Inject
      */
     protected $checkRepository = null;
 
