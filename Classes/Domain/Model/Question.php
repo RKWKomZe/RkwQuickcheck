@@ -1,5 +1,4 @@
 <?php
-
 namespace RKW\RkwQuickcheck\Domain\Model;
 
 /*
@@ -27,35 +26,33 @@ namespace RKW\RkwQuickcheck\Domain\Model;
 class Question extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
     /**
-     * question
-     *
      * @var string
      */
-    protected $question = '';
+    protected string $question = '';
+
 
     /**
-     * description
-     *
      * @var string
      */
-    protected $description = '';
+    protected string $description = '';
+
 
     /**
-     * topic
-     *
-     * @var \RKW\RkwQuickcheck\Domain\Model\Topic
+     * @var \RKW\RkwQuickcheck\Domain\Model\Topic|null
      */
-    protected $topic = null;
+    protected ?Topic $topic = null;
+
 
     /**
      * Returns the question
      *
      * @return string $question
      */
-    public function getQuestion()
+    public function getQuestion(): string
     {
         return $this->question;
     }
+
 
     /**
      * Sets the question
@@ -63,20 +60,22 @@ class Question extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param string $question
      * @return void
      */
-    public function setQuestion($question)
+    public function setQuestion(string $question): void
     {
         $this->question = $question;
     }
+
 
     /**
      * Returns the description
      *
      * @return string $description
      */
-    public function getDescription()
+    public function getDescription(): string
     {
         return $this->description;
     }
+
 
     /**
      * Sets the description
@@ -84,28 +83,30 @@ class Question extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param string $description
      * @return void
      */
-    public function setDescription($description)
+    public function setDescription(string $description): void
     {
         $this->description = $description;
     }
+
 
     /**
      * Returns the topic
      *
      * @return \RKW\RkwQuickcheck\Domain\Model\Topic topic
      */
-    public function getTopic()
+    public function getTopic(): ?Topic
     {
         return $this->topic;
     }
 
+
     /**
      * Sets the topic
      *
-     * @param string $topic
+     * @param \RKW\RkwQuickcheck\Domain\Model\Topic $topic
      * @return void
      */
-    public function setTopic($topic)
+    public function setTopic(Topic $topic): void
     {
         $this->topic = $topic;
     }

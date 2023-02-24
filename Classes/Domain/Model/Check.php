@@ -1,5 +1,4 @@
 <?php
-
 namespace RKW\RkwQuickcheck\Domain\Model;
 
 /*
@@ -15,6 +14,8 @@ namespace RKW\RkwQuickcheck\Domain\Model;
  * The TYPO3 project - inspiring people to share!
  */
 
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
+
 /**
  * Check
  *
@@ -26,48 +27,43 @@ namespace RKW\RkwQuickcheck\Domain\Model;
  */
 class Check extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
-    /**
-     * name
-     *
-     * @var string
-     */
-    protected $name = '';
 
     /**
-     * description
-     *
      * @var string
      */
-    protected $description = '';
+    protected string $name = '';
+
 
     /**
-     * resultA
-     *
      * @var string
      */
-    protected $resultA = '';
+    protected string $description = '';
+
 
     /**
-     * resultB
-     *
      * @var string
      */
-    protected $resultB = '';
+    protected string $resultA = '';
+
 
     /**
-     * resultC
-     *
      * @var string
      */
-    protected $resultC = '';
+    protected string $resultB = '';
+
 
     /**
-     * topic
-     *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RKW\RkwQuickcheck\Domain\Model\Topic>
+     * @var string
+     */
+    protected string $resultC = '';
+
+
+    /**
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RKW\RkwQuickcheck\Domain\Model\Topic>|null
      * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
      */
-    protected $topic = null;
+    protected ?ObjectStorage $topic = null;
+
 
     /**
      * __construct
@@ -77,6 +73,7 @@ class Check extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
         //Do not remove the next line: It would break the functionality
         $this->initStorageObjects();
     }
+
 
     /**
      * Initializes all ObjectStorage properties
@@ -91,15 +88,17 @@ class Check extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
         $this->topic = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
     }
 
+
     /**
      * Returns the name
      *
      * @return string $name
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
+
 
     /**
      * Sets the name
@@ -107,20 +106,22 @@ class Check extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param string $name
      * @return void
      */
-    public function setName($name)
+    public function setName(string $name): void
     {
         $this->name = $name;
     }
+
 
     /**
      * Returns the description
      *
      * @return string $description
      */
-    public function getDescription()
+    public function getDescription(): string
     {
         return $this->description;
     }
+
 
     /**
      * Sets the description
@@ -128,20 +129,22 @@ class Check extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param string $description
      * @return void
      */
-    public function setDescription($description)
+    public function setDescription(string $description): void
     {
         $this->description = $description;
     }
+
 
     /**
      * Returns the resultA
      *
      * @return string $resultA
      */
-    public function getResultA()
+    public function getResultA(): string
     {
         return $this->resultA;
     }
+
 
     /**
      * Sets the resultA
@@ -149,20 +152,22 @@ class Check extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param string $resultA
      * @return void
      */
-    public function setResultA($resultA)
+    public function setResultA(string $resultA): void
     {
         $this->resultA = $resultA;
     }
+
 
     /**
      * Returns the resultB
      *
      * @return string $resultB
      */
-    public function getResultB()
+    public function getResultB(): string
     {
         return $this->resultB;
     }
+
 
     /**
      * Sets the resultB
@@ -170,20 +175,22 @@ class Check extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param string $resultB
      * @return void
      */
-    public function setResultB($resultB)
+    public function setResultB(string $resultB): void
     {
         $this->resultB = $resultB;
     }
+
 
     /**
      * Returns the resultC
      *
      * @return string $resultC
      */
-    public function getResultC()
+    public function getResultC(): string
     {
         return $this->resultC;
     }
+
 
     /**
      * Sets the resultC
@@ -191,10 +198,11 @@ class Check extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param string $resultC
      * @return void
      */
-    public function setResultC($resultC)
+    public function setResultC(string $resultC): void
     {
         $this->resultC = $resultC;
     }
+
 
     /**
      * Adds a Topic
@@ -202,10 +210,11 @@ class Check extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param \RKW\RkwQuickcheck\Domain\Model\Topic $topic
      * @return void
      */
-    public function addTopic(\RKW\RkwQuickcheck\Domain\Model\Topic $topic)
+    public function addTopic(Topic $topic): void
     {
         $this->topic->attach($topic);
     }
+
 
     /**
      * Removes a Topic
@@ -213,20 +222,22 @@ class Check extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param \RKW\RkwQuickcheck\Domain\Model\Topic $topicToRemove The Topic to be removed
      * @return void
      */
-    public function removeTopic(\RKW\RkwQuickcheck\Domain\Model\Topic $topicToRemove)
+    public function removeTopic(Topic $topicToRemove): void
     {
         $this->topic->detach($topicToRemove);
     }
+
 
     /**
      * Returns the topic
      *
      * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RKW\RkwQuickcheck\Domain\Model\Topic> $topic
      */
-    public function getTopic()
+    public function getTopic(): ObjectStorage
     {
         return $this->topic;
     }
+
 
     /**
      * Sets the topic
@@ -234,7 +245,7 @@ class Check extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RKW\RkwQuickcheck\Domain\Model\Topic> $topic
      * @return void
      */
-    public function setTopic(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $topic)
+    public function setTopic(ObjectStorage $topic): void
     {
         $this->topic = $topic;
     }

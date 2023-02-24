@@ -1,5 +1,4 @@
 <?php
-
 namespace RKW\RkwQuickcheck\Domain\Model;
 
 /*
@@ -15,6 +14,8 @@ namespace RKW\RkwQuickcheck\Domain\Model;
  * The TYPO3 project - inspiring people to share!
  */
 
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
+
 /**
  * Topic
  *
@@ -27,33 +28,29 @@ namespace RKW\RkwQuickcheck\Domain\Model;
 class Topic extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
     /**
-     * name
-     *
      * @var string
      */
-    protected $name = '';
+    protected string $name = '';
+
 
     /**
-     * description
-     *
      * @var string
      */
-    protected $description = '';
+    protected string $description = '';
+
 
     /**
-     * check
-     *
-     * @var \RKW\RkwQuickcheck\Domain\Model\Check
+     * @var \RKW\RkwQuickcheck\Domain\Model\Check|null
      */
-    protected $check = null;
+    protected ?Check $check = null;
+
 
     /**
-     * question
-     *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RKW\RkwQuickcheck\Domain\Model\Question>
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RKW\RkwQuickcheck\Domain\Model\Question>|null
      * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
      */
-    protected $question = null;
+    protected ?ObjectStorage $question = null;
+
 
     /**
      * __construct
@@ -63,6 +60,7 @@ class Topic extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
         //Do not remove the next line: It would break the functionality
         $this->initStorageObjects();
     }
+
 
     /**
      * Initializes all ObjectStorage properties
@@ -77,15 +75,17 @@ class Topic extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
         $this->question = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
     }
 
+
     /**
      * Returns the name
      *
      * @return string $name
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
+
 
     /**
      * Sets the name
@@ -93,20 +93,22 @@ class Topic extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param string $name
      * @return void
      */
-    public function setName($name)
+    public function setName(string $name): void
     {
         $this->name = $name;
     }
+
 
     /**
      * Returns the description
      *
      * @return string $description
      */
-    public function getDescription()
+    public function getDescription(): string
     {
         return $this->description;
     }
+
 
     /**
      * Sets the description
@@ -114,20 +116,22 @@ class Topic extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param string $description
      * @return void
      */
-    public function setDescription($description)
+    public function setDescription(string $description): void
     {
         $this->description = $description;
     }
 
+
     /**
      * Returns the check
      *
-     * @return \RKW\RkwQuickcheck\Domain\Model\Check $check
+     * @return \RKW\RkwQuickcheck\Domain\Model\Check|null
      */
-    public function getCheck()
+    public function getCheck(): ?Check
     {
         return $this->check;
     }
+
 
     /**
      * Sets the check
@@ -135,10 +139,11 @@ class Topic extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param \RKW\RkwQuickcheck\Domain\Model\Check $check
      * @return void
      */
-    public function setCheck(\RKW\RkwQuickcheck\Domain\Model\Check $check)
+    public function setCheck(Check $check): void
     {
         $this->check = $check;
     }
+
 
     /**
      * Adds a Question
@@ -146,10 +151,11 @@ class Topic extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param \RKW\RkwQuickcheck\Domain\Model\Question $question
      * @return void
      */
-    public function addQuestion(\RKW\RkwQuickcheck\Domain\Model\Question $question)
+    public function addQuestion(Question $question): void
     {
         $this->question->attach($question);
     }
+
 
     /**
      * Removes a Question
@@ -157,20 +163,22 @@ class Topic extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param \RKW\RkwQuickcheck\Domain\Model\Question $questionToRemove The Question to be removed
      * @return void
      */
-    public function removeQuestion(\RKW\RkwQuickcheck\Domain\Model\Question $questionToRemove)
+    public function removeQuestion(Question $questionToRemove): void
     {
         $this->question->detach($questionToRemove);
     }
+
 
     /**
      * Returns the question
      *
      * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RKW\RkwQuickcheck\Domain\Model\Question> $question
      */
-    public function getQuestion()
+    public function getQuestion(): ObjectStorage
     {
         return $this->question;
     }
+
 
     /**
      * Sets the question
@@ -178,7 +186,7 @@ class Topic extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RKW\RkwQuickcheck\Domain\Model\Question> $question
      * @return void
      */
-    public function setQuestion(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $question)
+    public function setQuestion(ObjectStorage $question): void
     {
         $this->question = $question;
     }
