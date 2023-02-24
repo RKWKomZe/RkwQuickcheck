@@ -12,20 +12,20 @@
 
 $EM_CONF[$_EXTKEY] = [
     'title' => 'RKW QuickCheck',
-    'description' => 'An Extension to manage answers of dichotomous questions and returns a answer-based calculated result',
+    'description' => 'An Extension to manage answers of dichotomous questions and returns a answer-based calculated result.',
     'category' => 'plugin',
     'author' => 'Maximilian Fäßler',
     'author_email' => 'maximilian@faesslerweb.de',
-    'state' => 'beta',
+    'state' => 'stable',
     'internal' => '',
     'uploadfolder' => '0',
     'createDirs' => '',
     'clearCacheOnLoad' => 0,
-    'version' => '8.7.5',
+    'version' => '9.5.0',
     'constraints' => [
         'depends' => [
-            'typo3' => '7.6.0-8.7.99',
-            'rte_ckeditor' => '8.7.31-8.7.99',
+            'typo3' => '9.5.0-9.5.99',
+            'rte_ckeditor' => '9.5.0-9.5.99',
         ],
         'conflicts' => [],
         'suggests' => [],

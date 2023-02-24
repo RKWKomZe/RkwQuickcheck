@@ -1,5 +1,4 @@
 <?php
-
 namespace RKW\RkwQuickcheck\Controller;
 
 /*
@@ -14,26 +13,25 @@ namespace RKW\RkwQuickcheck\Controller;
  *
  * The TYPO3 project - inspiring people to share!
  */
-use Konafets\Typo3Debugbar\Overrides\DebuggerUtility;
+
+use RKW\RkwQuickcheck\Domain\Repository\CheckRepository;
 
 /**
  * CheckController
  *
  * @author Maximilian Fäßler <maximilian@faesslerweb.de>
  * @author Steffen Kroggel <developer@steffenkroggel.de>
- * @copyright Rkw Kompetenzzentrum
+ * @copyright RKW Kompetenzzentrum
  * @package RKW_RkwQuickcheck
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  */
 class CheckController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
     /**
-     * checkRepository
-     *
      * @var \RKW\RkwQuickcheck\Domain\Repository\CheckRepository
-     * @inject
+     * @TYPO3\CMS\Extbase\Annotation\Inject
      */
-    protected $checkRepository = null;
+    protected CheckRepository $checkRepository;
 
 
     /**
@@ -41,7 +39,7 @@ class CheckController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      *
      * @return void
      */
-    public function indexAction()
+    public function indexAction(): void
     {
         $this->view->assign('check', $this->checkRepository->findByIdentifier(intval($this->settings['check'])));
     }
@@ -55,7 +53,7 @@ class CheckController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      * @throws \TYPO3\CMS\Extbase\Mvc\Exception\StopActionException;
      * @throws \TYPO3\CMS\Extbase\Mvc\Exception\UnsupportedRequestTypeException;
      */
-    public function showAction($checkExec = null)
+    public function showAction(array $checkExec = []): void
     {
         // check if terms are selected (only if PID to terms are set)
         if (
@@ -93,7 +91,7 @@ class CheckController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      * @throws \TYPO3\CMS\Extbase\Mvc\Exception\UnsupportedRequestTypeException;
      * @return void
      */
-    public function resultAction($checkExec = null)
+    public function resultAction(array $checkExec = []): void
     {
         // 1. If check is null send user to index
         if (!$checkExec) {
