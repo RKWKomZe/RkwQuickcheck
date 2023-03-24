@@ -1,11 +1,19 @@
 plugin.tx_rkwquickcheck {
 	view {
-		templateRootPaths.0 = EXT:rkw_quickcheck/Resources/Private/Templates/
-		templateRootPaths.1 = {$plugin.tx_rkwquickcheck.view.templateRootPath}
-		partialRootPaths.0 = EXT:rkw_quickcheck/Resources/Private/Partials/
-		partialRootPaths.1 = {$plugin.tx_rkwquickcheck.view.partialRootPath}
-		layoutRootPaths.0 = EXT:rkw_quickcheck/Resources/Private/Layouts/
-		layoutRootPaths.1 = {$plugin.tx_rkwquickcheck.view.layoutRootPath}
+		templateRootPaths{
+		    0 = EXT:rkw_quickcheck/Resources/Private/Templates/
+		    1 = {$plugin.tx_rkwquickcheck.view.templateRootPath}
+		}
+
+		partialRootPaths {
+		    0 = EXT:rkw_quickcheck/Resources/Private/Partials/
+		    1 = {$plugin.tx_rkwquickcheck.view.partialRootPath}
+		    2 = {$plugin.tx_coreextended.view.partialRootPath}
+		}
+		layoutRootPaths{
+		    0 = EXT:rkw_quickcheck/Resources/Private/Layouts/
+            1 = {$plugin.tx_rkwquickcheck.view.layoutRootPath}
+        }
 	}
 	persistence {
 		storagePid = {$plugin.tx_rkwquickcheck.persistence.storagePid}
@@ -25,10 +33,10 @@ plugin.tx_rkwquickcheck {
 
 page.includeJSFooter.txRkwQuickcheck = EXT:rkw_quickcheck/Resources/Public/Scripts/quickcheck-2.0.js
 
-[globalVar = LIT:1 = {$plugin.tx_rkwquickcheck.settings.includeCss}]
+[{$plugin.tx_rkwquickcheck.settings.includeCss} == 1]
     page.includeCSS.txRkwQuickcheck = EXT:rkw_quickcheck/Resources/Public/Styles/webcheck-2.0.css
-[global]
+[END]
 
-[globalVar = LIT:1 = {$plugin.tx_rkwquickcheck.settings.includeJQuery}]
+[{$plugin.tx_rkwquickcheck.settings.includeJQuery} == 1]
 	page.includeJSFooterlibs.txRkwQuickcheck  = EXT:rkw_quickcheck/Resources/Public/Scripts/jquery-3.4.1.min.js
-[global]
+[END]

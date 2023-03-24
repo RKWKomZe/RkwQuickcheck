@@ -1,0 +1,15 @@
+routeEnhancers:
+  RkwQuickcheck:
+    type: Extbase
+    namespace: 'tx_rkwquickcheck_check'
+    routes:
+      - routePath: '/rkw-quickcheck/index'
+        _controller: 'Check::index'
+      - routePath: '/rkw-quickcheck/show'
+        _controller: 'Check::show'
+      - routePath: '/rkw-quickcheck/result'
+        _controller: 'Check::result'
+    defaultController: 'Check::index'
+    requirements:
+      survey: '[0-9]{1,10}'
+      surveyResult: '[0-9]{1,10}'
