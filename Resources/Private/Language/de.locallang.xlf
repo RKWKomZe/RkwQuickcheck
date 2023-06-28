@@ -71,10 +71,6 @@
 
 
 			<!-- CheckController -->
-			<trans-unit id="checkController.error.terms">
-				<source>Please accept the terms</source>
-				<target>Das muss leider sein: Bitte akzeptieren Sie die Nutzungsbedingungen.</target>
-			</trans-unit>
 			<trans-unit id="checkController.error.not_complete">
 				<source>Please answer all questions</source>
 				<target>Da ist noch etwas offen. Bitte beantworten Sie alle Fragen.</target>

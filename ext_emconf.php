@@ -26,6 +26,7 @@ $EM_CONF[$_EXTKEY] = [
         'depends' => [
             'typo3' => '9.5.0-9.5.99',
             'core_extended' => '9.5.4-9.5.99',
+            'fe_register' => '9.5.0-9.5.99',
             'rte_ckeditor' => '9.5.0-9.5.99',
         ],
         'conflicts' => [],
