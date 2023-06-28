@@ -58,9 +58,6 @@
 
 
 			<!-- CheckController -->
-			<trans-unit id="checkController.error.terms">
-				<source>Please accept the terms</source>
-			</trans-unit>
 			<trans-unit id="checkController.error.not_complete">
 				<source>Please answer all questions</source>
 			</trans-unit>

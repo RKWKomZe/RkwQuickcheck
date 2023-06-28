@@ -48,38 +48,13 @@ class CheckController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     /**
      * action show
      *
-     * @param array $checkExec
+     * @param bool $dummy
      * @return void
-     * @throws \TYPO3\CMS\Extbase\Mvc\Exception\StopActionException;
-     * @throws \TYPO3\CMS\Extbase\Mvc\Exception\UnsupportedRequestTypeException;
+     * @TYPO3\CMS\Extbase\Annotation\Validate("Madj2k\FeRegister\Validation\Consent\TermsValidator", param="dummy")
      */
-    public function showAction(array $checkExec = []): void
+    public function showAction(bool $dummy): void
     {
-        // check if terms are selected (only if PID to terms are set)
-        if (
-            !empty($this->settings['termsPid'])
-            || !empty($this->settings['termsPidFlexform'])
-        ) {
-            if (
-                !$checkExec
-                || !isset($checkExec['terms'])
-                || !intval($checkExec['terms'])
-            ) {
-                // please accept the terms!
-                $this->addFlashMessage(
-                    \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate(
-                        'checkController.error.terms',
-                        'rkw_quickcheck'
-                    ),
-                    '',
-                    \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR
-                );
-                $this->redirect('index');
-            }
-        }
-
         $this->view->assign('check', $this->checkRepository->findByIdentifier(intval($this->settings['check'])));
-        $this->view->assign('checkExec', $checkExec);
     }
 
 
@@ -95,7 +70,7 @@ class CheckController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     {
         // 1. If check is null send user to index
         if (!$checkExec) {
-            // please accept the terms!
+
             $this->addFlashMessage(
                 \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('checkController.error.no_data', 'rkw_quickcheck')
             );
@@ -161,5 +136,18 @@ class CheckController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         $this->view->assign('check', $check);
         $this->view->assign('checkExec', $checkExec);
         $this->view->assign('valueColor', $valueColor);
+    }
+
+
+    /**
+     * A template method for displaying custom error flash messages, or to
+     * display no flash message at all on errors. Override this to customize
+     * the flash message in your action controller.
+     *
+     * @return string|false The flash message or FALSE if no flash message should be set
+     */
+    protected function getErrorFlashMessage()
+    {
+        return false;
     }
 }
