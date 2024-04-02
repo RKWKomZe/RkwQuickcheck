@@ -35,6 +35,15 @@ class CheckController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 
 
     /**
+     * @param \RKW\RkwQuickcheck\Domain\Repository\CheckRepository $checkRepository
+     */
+    public function injectCheckRepository(CheckRepository $checkRepository)
+    {
+        $this->checkRepository = $checkRepository;
+    }
+
+
+    /**
      * action index
      *
      * @return void
