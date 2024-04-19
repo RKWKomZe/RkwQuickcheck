@@ -17,9 +17,6 @@ return [
 		'searchFields' => 'name,description,tx_check,question',
 		'iconfile' => 'EXT:rkw_quickcheck/Resources/Public/Icons/tx_rkwquickcheck_domain_model_topic.gif'
 	],
-	'interface' => [
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, name, description, tx_check, question',
-	],
 	'types' => [
 		'1' => ['showitem' => 'name, description, tx_check, question'],
 	],
@@ -43,7 +40,6 @@ return [
 		],
 		'l10n_parent' => [
 			'displayCond' => 'FIELD:sys_language_uid:>:0',
-			'exclude' => true,
 			'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
 			'config' => [
 				'type' => 'select',
