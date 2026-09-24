@@ -11,7 +11,8 @@
 						<TCEforms>
 							<label>LLL:EXT:rkw_quickcheck/Resources/Private/Language/locallang_db.xlf:flexform.select.check</label>
 							<config>
-								<type>select</type>
+                                <type>select</type>
+                                <renderType>selectSingle</renderType>
 								<size>1</size>
 								<minitems>1</minitems>
 								<maxitems>1</maxitems>
